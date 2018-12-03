@@ -1,25 +1,32 @@
 import LoginData
 
+import unittest
 from selenium import webdriver
+
+
 
 LOGIN = LoginData.LOGIN
 PASSWORD = LoginData.PASSWORD
 
-browser = webdriver.Chrome()
 
+class SomeTest(unittest.TestCase):
 
-def login():
-    browser.get('http://facebook.com')
+    def setUp(self):
+        self.driver = webdriver.Chrome(executable_path=LoginData.DRIVERPATH)
+        self.url = 'http://facebook.com'
 
+    def testOpenBrowser(self):
+        driver = self.driver
+        driver.get("http://facebook.com")
+        driver.find_element_by_id('email').send_keys(LOGIN)
+        driver.find_element_by_id('pass').send_keys(PASSWORD)
+        driver.find_element_by_id('loginbutton').click()
 
-class SomeTest():
-    def first(self):
-        pass
-
-    def second(self):
-        pass
+    def tearDown(self):
+        self.driver.close()
+        self.driver.quit()
 
 
 if __name__ == '__main__':
-    login()
+    unittest.main()
 
