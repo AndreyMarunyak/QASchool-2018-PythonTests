@@ -2,6 +2,8 @@ import pickle
 
 from Config.Data import DRIVERPATH
 from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 def chrome():
 
@@ -20,3 +22,5 @@ def loadCookies(browser):
     for cookie in cookies:
         browser.add_cookie(cookie)
 
+def wait(browser):
+    return WebDriverWait(browser, 30)
