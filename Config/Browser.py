@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 import pickle
 
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-
 from Config import Data, FindElement
 
 
@@ -25,14 +22,3 @@ def loadCookies(browser):
     for cookie in cookies:
         browser.add_cookie(cookie)
 
-=======
-from selenium import webdriver
-from Config import Data
-
-
-class Browser():
-
-    @staticmethod
-    def chrome():
-        return webdriver.Chrome(executable_path=Data.DRIVERPATH)
->>>>>>> f31d7f2... add config files and refactor
