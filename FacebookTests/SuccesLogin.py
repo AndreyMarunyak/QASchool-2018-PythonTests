@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 import unittest
 import time
 
-POST_TEXT = 'Принёс жертву богу опп'
+POST_TEXT = 'Принёс жертву богу ооп'
 
 chrome = chrome()
 chrome.implicitly_wait(30)
@@ -44,10 +44,8 @@ class SuccessLoginTest(unittest.TestCase):
         chrome.find_element(By.XPATH, QA_SCHOOL_LINK).click()
         chrome.find_element(By.XPATH, POST_FIELD).send_keys(POST_TEXT)
         chrome.find_element(By.XPATH, SEND_POST_BUTTON).click()
-        time.sleep(10)
         chrome.find_element(By.XPATH, COMMUNITY_BUTTON).click()
-        time.sleep(5)
-        chrome.find_element(By.XPATH, LIKE_BUTTON).click()
+        #chrome.find_element(By.XPATH, LIKE_BUTTON).click()
         assert (POST_TEXT in chrome.page_source)
 
     @classmethod
