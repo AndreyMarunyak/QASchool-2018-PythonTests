@@ -1,5 +1,5 @@
-LOGIN = '+380662056789'
-PASSWORD = 'zfp!!316***'
+LOGIN = ''
+PASSWORD = ''
 
 URL = 'http://facebook.com'
 DRIVERPATH = '/home/zebra/BrowserDrivers/chromedriver'
