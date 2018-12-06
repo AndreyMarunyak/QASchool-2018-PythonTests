@@ -1,2 +1,4 @@
 # QASchool-2018-PythonTests
-Autotests for QA School on Python
+
+1. `pip install selenium`
+2. Put your login, password and path to your chromedriver to `Data.py`
